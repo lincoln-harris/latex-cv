@@ -1,0 +1,173 @@
+% start of file `template.tex'.
+%% Copyright 2006-2010 Xavier Danaux (xdanaux@gmail.com).
+%% Copyright 2010-2011 Mark Liu (markwayneliu@gmail.com).
+%% Copyright 2016-2017 Olga Botvinnik (olga.botvinnik@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,letterpaper,serif]{moderncv}
+
+\usepackage{verbatim}
+
+% moderncv themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+\usepackage{lastpage}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+
+% \usepackage[style=numeric-comp,
+% sorting=none,defernumbers=true]{biblatex}%mod.
+% \DeclareBibliographyCategory{cited}
+% \AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+% \addbibresource{publications.bib}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+%\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% --- Begin use with Multibib ----
+\usepackage[resetlabels]{multibib}
+\newcites{book,article,poster}{{Books},{Journal Articles},{Conference Posters}}
+
+% Number the Publications
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+% --- END use with Multibib ---
+
+% BibTeX - don't print the year for publications that are "in press"
+\newcommand{\dontprintyear}[1]{}
+
+
+% personal data
+\firstname{Lincoln J.}
+\familyname{Harris}
+\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+
+\address{499 Illinois St}{}{San Francisco, CA 94158}    % optional, remove the line if not wanted
+% \mobile{(omitted for web)}                    % optional, remove the line if not wanted
+%\homepage{http://olgabotvinnik.com}                % optional, remove the line if not wanted
+\email{lincoln.harris@czbiohub.org}                      % optional, remove the line if not wanted
+%\social[linkedin][https://www.linkedin.com/in/olgabotvinnik]{olga-botvinnik}
+%\social[twitter]{olgabot}                             % optional, remove / comment the line if not wanted
+\social[github]{lincoln-harris}                              % optional, remove / comment the line if not wanted
+% \date{\today}
+\quote{Last Updated: \today}                                 % optional, remove / comment the line if not wanted
+
+%\extrainfo{\url{http://markliu.me}} % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% Could never get the page numbers to work so added them by hand with \rfoot
+% \nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+% \input{filename}
+
+\maketitle
+\rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+
+
+\cvline{}{Aspiring computational biologist with strong interests in big data, disease evolution and genomics, teaching, and open source code/science}
+
+
+\section{Education}
+\cventry{2017}{B.A., Biology}{Swarthmore College}{Swarthmore, PA}{}{}
+
+
+\section{Experience}
+
+\cventry{2017--Present}{Chan Zuckerberg Biohub}{Spyros Darmanis Laboratory}{San Francisco, CA}{Research Associate II}{
+Investigated large biological datasets with a variety of tools including Docker, Python (\texttt{pandas, SciPy, Matplotlib, scikit-learn}), AWS, and workflow management systems such as Reflow. Worked as part of a collaborative team in a fast-paced, cutting-edge scientific environment.  \\\\
+Projects:
+\begin{itemize}
+\item Built a software tool for fast and memory-efficient summarizing of vcf (variant calling format) file entries following a sequencing experiment (\url{https://github.com/czbiohub/cerebra})
+\item Identified mutations in single-cell RNA-seq patient samples as part of a larger effort to better characterize changes in the lung tumor microenvironment across disease progression. In collaboration with the Bivona lab of UCSF, manuscript submitted to \emph{Cell}
+\item Investigated the gene expression and alternate splicing dynamics of neuroendocrine cells in the developing lung, in collaboration with the Christin Kuo lab of Stanford
+\end{itemize}
+}
+\bigbreak
+\cventry{2016--2017}{Brad Davidson Laboratory}{Swarthmore College Biology Department}{Swarthmore, PA}{Computational Biology Research Assistant}{Assembled the genome and embryonic transcriptome of \emph{Corella Inflata} (sea squirt). Helped construct an improved phylogenetic tree for the \emph{Tunicate} subphylum, in collaboration with the Joe Ryan Lab of the University of Florida Whitney Marine Station}
+
+\section{Research Training}
+
+\cventry{2015--2016}{Nick Kaplinsky Laboratory}{Swarthmore College}{Swarthmore, PA}{}{Developed web-based pipelines for differential gene expression tests in RNA-seq samples}
+\cventry{2013--2014}{Evan Vosburgh Laboratory}{Cancer Institute of New Jersey}{New Brunswick, NJ}{}{Investigated the effects of several cancer drugs on expression of key oncogenes, in cell culture.}
+
+\section{Honors and Awards}
+\cvline{2019}{NSF Graduate Research Fellowship Program -- \emph{Applicant}}
+\cvline{2016 -- Present}{Sigma Xi National Science Honors Society}
+
+\section{Publications}
+% --- START for use with multibib package ----
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}          % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}        % 'publications' is the name of a BibTeX file
+
+\renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}          % 'publications' is the name of a BibTeX file
+\bigbreak
+
+\renewcommand{\refname}{Posters}
+\nociteposter{*}
+%\bibliographystyleposter{habbrvyrolgabold}
+\bibliographystyleposter{plain}
+\bibliographyposter{posters}                   % 'posters' is the name of a BibTeX file
+
+% --- END for use with multibib package ----
+
+\section{Talks}
+\cvline{}{* indicates invited talk}
+\cventry{2019}{New methods for high-throughput variant call processing}{Beyond the Cell Atlas Conference}{Berkeley, CA*}{}{}
+
+\cventry{2018}{Single-cell characterization of cancer hallmarks in advanced stage Lung Adenocarcinoma}{Chan Zuckerberg Biohub Internal Seminar Series}{San Francisco, CA}{}{}
+
+\cventry{2017}{The genome and embryonic transcriptome of \emph{Corella Inflata}}{Undergraduate Biology Department Research Symposium}{Swarthmore College}{Swarthmore, PA}{}{}
+
+\section{Software}
+
+\cvline{\texttt{cerebra}}{Performs high-throughput summarizing of vcf entries following a sequencing experiment. 
+\newline\url{https://github.com/czbiohub/cerebra} (16 stars on GitHub)}
+
+\cvline{\texttt{motifScan}}{Scans an enhancer region for putative transcription factor binding sites. 
+\newline\url{https://github.com/lincoln-harris/motifScan}}
+
+\section{Teaching, Leadership and Interests}
+
+\cventry{2016--2017}{Instructor}{Cupcakes and Coding}{Chan Zuckerberg Biohub}{San Francisco, CA}{Volunteer instructor at weekly beginner-friendly coding sessions}{}
+\cventry{2016--2017}{Co-host}{Tactical Chunder}{WSRN Radio Station}{Swarthmore, PA}{Co-hosted a popular weekly radio program for two semesters}{}
+\cventry{2016--2017}{Volunteer Instructor}{Youth Swim Lessons}{}{Swarthmore, PA}{Taught bi-weekly swim lessons for children ages 5-12}{}
+\cventry{2016}{Student teacher}{Swarthmore Rutledge Elementary School}{Swarthmore, PA}{}{Taught science lessons for 5th grade students at a local elementary school}{}
+\cventry{2013--2017}{Member}{Swarthmore College Swim Team}{Swarthmore, PA}{}{Four-year varsity team member of a Division III swim program}{}
+\cventry{2012--2013}{Captain}{South Brunswick High School Swim Team}{South Brunswick, NJ}{}{Lead varsity team to a dual-meet record of 6-4}{}
+
+\section{Mentees}
+
+\cventry{2019}{Rohan Vanheusden}{Nueva High School}{San Mateo, CA}{High School Student}{}
+
+\end{document}
