@@ -34,8 +34,8 @@
 
 % --- Begin use with Multibib ----
 \usepackage[resetlabels]{multibib}
+%\usepackage[sorting=none]{multibib}
 \newcites{book,article,poster}{{Books},{Journal Articles},{Conference Posters}}
-
 % Number the Publications
 \makeatletter
 \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
@@ -57,9 +57,9 @@
 \quote{Last Updated: \today}    
 
 % to show numerical labels in the bibliography; only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
 
 \begin{document}
 
@@ -128,14 +128,16 @@ Assembled the genome and embryonic transcriptome of \emph{Corella Inflata} (sea 
 
 \renewcommand{\refname}{Articles}
 \nocite{*}
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{publications}          % 'publications' is the name of a BibTeX file
 \bigbreak
 
 \renewcommand{\refname}{Posters}
 \nociteposter{*}
 %\bibliographystyleposter{habbrvyrolgabold}
-\bibliographystyleposter{plain}
+%\bibliographystyleposter{plain}
+\bibliographystyleposter{unsrt}
 \bibliographyposter{posters}                   % 'posters' is the name of a BibTeX file
 
 % --- END for use with multibib package ----
@@ -149,7 +151,7 @@ Assembled the genome and embryonic transcriptome of \emph{Corella Inflata} (sea 
 \cventry{2019}{New methods for high-throughput variant call processing}{Beyond the Cell Atlas Conference}{Berkeley, CA*}{}{Was chosen as one of 15 speakers to present research at a selective single-cell transcriptomics conference attended by PIs and researchers from across the country.}{}
 \bigbreak
 
-\cventry{2019}{Single-cell characterization of cancer hallmarks in advanced stage Lung Adenocarcinoma}{Chan Zuckerberg Biohub Interlab Confab}{UCSF, San Francisco, CA}{}{}
+\cventry{2019}{Single-cell characterization of cancer hallmarks in advanced stage Lung Adenocarcinoma}{Chan Zuckerberg Biohub Inter-lab Confab}{UCSF, San Francisco, CA}{}{}
 
 \cventry{2017}{The genome and embryonic transcriptome of \emph{Corella Inflata}}{Undergraduate Biology Department Research Symposium}{Swarthmore College}{Swarthmore, PA}{}{}
 
@@ -170,6 +172,6 @@ Assembled the genome and embryonic transcriptome of \emph{Corella Inflata} (sea 
 
 \section{Mentees}
 
-\cventry{2019}{Rohan Vanheusden}{Nueva High School}{San Mateo, CA}{High School Student}{Mentored a local high school student with strong interests in computational biology for 11 weeks. }
+\cventry{2019}{Rohan Vanheusden}{Nueva High School}{San Mateo, CA}{High School Student}{Mentored a local high school student with interests in computational biology for 11 weeks. }
 
 \end{document}
