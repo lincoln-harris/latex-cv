@@ -1,0 +1,176 @@
+% start of file `template.tex'.
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,letterpaper,serif]{moderncv}
+
+\usepackage{verbatim}
+
+% moderncv themes
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\frenchspacing
+\usepackage{lastpage}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+
+% --- Begin use with Multibib ----
+%\usepackage[resetlabels]{multibib}
+%\usepackage[sorting=none]{multibib}
+%\newcites{book,article,poster}{{Books},{Journal Articles},{Conference Posters}}
+% Number the Publications
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+% --- END use with Multibib ---
+
+% BibTeX - don't print the year for publications that are "in press"
+\newcommand{\dontprintyear}[1]{}
+
+% personal data
+\firstname{Lincoln J.}
+\familyname{Harris}
+\title{Curriculum Vitae}                        
+\address{William H. Foege Hall}{3720 15th Ave NE}{Seattle, WA, 98195}
+\email{lincolnh@uw.edu}                 
+\social[github]{lincoln-harris}                             
+%\quote{Last Updated: \today}    
+
+\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+\begin{document}
+
+\maketitle
+\rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+
+\cvline{}{Computational biologist with interests in machine learning, computational proteomics, scientific software development, outreach and open access science.}
+
+\section{Education}
+\cventry{2020-Present}{PhD, Genome Sciences}{University of Washington}{Seattle, WA}{}{Degree in progress.}
+\cventry{2017}{B.A., Biology}{Swarthmore College}{Swarthmore, PA}{}{}
+
+\section{Experience}
+
+\cventry{2021-Present}{Bill Noble Laboratory}{University of Washington Department of Genome Sciences}{Seattle, WA}{}{
+I utilize machine learning techniques to explore problems in computational proteomics. I frequently use cluster computing, \texttt{pytorch} , \texttt{scikit-learn}, and GPU-accelerated computing.   \\\\
+Projects:
+\begin{itemize}
+    \item Imputation of quantitative mass spectrometry data with Non-negative Matrix Factorization and deep neural networks. 
+\end{itemize}
+}
+
+\bigbreak
+
+\cventry{2017--2020}{Chan Zuckerberg Biohub}{Spyros Darmanis Group}{San Francisco, CA}{Research Associate II}{
+Investigated large biological datasets with a variety of tools including Docker, Python (\texttt{pandas, SciPy, Matplotlib, scikit-learn}), AWS, and workflow management systems such as NextFlow. Worked as part of a collaborative team in a fast-paced, cutting-edge scientific environment.  \\\\
+Was promoted from Research Associate I to Research Associate II.   \\\\
+Projects:
+\begin{itemize}
+\item Built a software tool for fast and memory-efficient summarizing of vcf (variant calling format) file entries following a sequencing experiment (\url{https://github.com/czbiohub/cerebra}.)
+\item Identified variants in single-cell RNA-seq patient samples as part of a larger effort to better characterize changes in the lung tumor microenvironment across disease progression. In collaboration with the Trevor Bivona lab of UCSF.
+\item Investigated the gene expression and alternate splicing dynamics of neuroendocrine cells in the developing lung, in collaboration with the Christin Kuo lab of Stanford.
+\end{itemize}
+}
+
+\bigbreak
+
+\cventry{2016--2017}{Brad Davidson Laboratory}{Swarthmore College Biology Department}{Swarthmore, PA}{}{
+Assembled the genome and embryonic transcriptome of \emph{Corella Inflata} (sea squirt). Helped construct an improved phylogenetic tree for the \emph{Tunicate} subphylum, in collaboration with the Joe Ryan Lab of the University of Florida Whitney Marine Station
+}
+
+% \section{Research Training}
+% \cventry{2020--2021}{Research Rotations}{University of Washington Department of Genome Sciences}{Seattle, WA}{}{Rotated in the labs of \href{https://sites.google.com/site/harriskelley/home}{Kelley Harris}, \href{https://www.beliveau.io/}{Brian Beliveau} and \href{https://noble.gs.washington.edu/}{Bill Noble}. Worked on population genetic simulations of extinction events, automatic annotation of cellular features from high-resolution microscopy images, and methods development for computational proteomics, respectively.}{}
+
+% \bigbreak
+
+% \cventry{2015}{Nick Kaplinsky Laboratory}{Swarthmore College Biology Department}{Swarthmore, PA}{}{Conducted basic plant molecular genetics research and learned basic lab skills such as western blotting, RNA extraction and PCR}{}
+
+\section{Honors and Awards}
+
+\cvline{2023}{Cascadia Proteomics Symposium -- Best poster award}
+
+\cvline{2022}{NIH Ruth L. Kirschstein Predoctoral Individual National Research Service Award (F31) -- Awardee}
+
+\cvline{2021}{NSF Graduate Research Fellowship Program -- Honorable Mention}
+
+\cvline{2016 -- 2019}{Sigma Xi National Science Honors Society}
+
+%\section{Publications}
+
+%\renewcommand{\refname}{Articles}
+\nocite{*}
+%\bibliographystyle{plain}
+\bibliographystyle{unsrt}
+\bibliography{publications}     % 'publications' is a BibTeX file
+\bigbreak
+
+% \renewcommand{\refname}{Posters}
+% \nociteposter{*}
+% \bibliographystyleposter{unsrt}
+% \bibliographyposter{posters}    % 'posters' is a BibTeX file
+
+% --- END for use with multibib package ----
+
+\section{Talks}
+
+\cventry{2023}{Evaluating proteomics imputation methods with improved criteria}{American Society for Mass Spectrometry Asilomar Conference on Computational Proteomics}{Monterey, CA}{}{Full length talk}{}
+\bigbreak
+
+\cventry{2023}{Evaluating proteomics imputation methods with improved criteria}{Cascadia Proteomics Symposium}{Seattle, WA}{}{Short Talk}{}
+\bigbreak
+
+\cventry{2019}{New methods for high-throughput variant call processing}{Beyond the Cell Atlas Conference}{Berkeley, CA}{}{Short Talk}{}
+\bigbreak
+
+\cventry{2019}{Single-cell characterization of cancer hallmarks in advanced stage Lung Adenocarcinoma}{Chan Zuckerberg Biohub Inter-lab Confab}{San Francisco, CA}{}{Short Talk}{}
+
+\section{Software}
+
+\cvline{\texttt{Lupine}}{Imputation of quantitative proteomics data using deep neural networks. Add some more shit here.}
+
+\cvline{\texttt{Cerebra}}{Performs high-throughput summarizing of nucleotide and protein-level variants following a RNA sequencing experiment. 
+\newline\url{https://github.com/czbiohub/cerebra} (58 stars on GitHub)}
+
+\section{Teaching}
+
+\cventry{2024}{Instructor of Record}{GENOME 559 Introduction to Statistical and Computational Genomics}{University of Washington}{ Seattle, WA}{This was a graduate course. I was the instructor!}{}
+
+\cventry{2023}{Teaching Assistant}{GENOME 361 Fundamentals of Genetics and Genomics}{University of Washington}{Seattle, WA}{This was an undergraduate course.}{}
+
+\section{Mentees}
+
+\cventry{2023}{Youssf Hegazy}{Columbia University}{New York, NY}{}{Direct mentor to a summer Research Experience Undergraduate (REU) student. We did some cool things, like xxx, xxx and xxx.}{}
+
+\cventry{2019}{Rohan Vanheusden}{Nueva High School}{San Mateo, CA}{}{Direct mentor to an advanced high school student with interests in computational biology for 11 weeks. We did some cool things, like xxx, xxx and xxx.}{}
+
+\section{Leadership and Outreach}
+
+\cventry{2023--Present}{Graduate Student Representative}{Teaching Committee}{University of Washington Department of Genome Sciences}{Seattle, WA}{Explain what I do in this role.}
+
+\cventry{2023--Present}{Organizer}{Computational Proteomics Journal Club}{University of Washington Department of Genome Sciences}{Seattle, WA}{Explain what I do in this role.}
+
+\cventry{2021--Present}{Instructor}{The Carpentries Organization}{}{}{Certified to lead Data and Software Carpentries workshops designed to provide scientists with coding and data analysis skills}{}
+
+\cventry{2021--Present}{Volunteer}{Skype-A-Scientist}{}{}{Regularly give career day presentations for elementary school classrooms. I introduce my work as a computational biologist and answer questions about graduate school, science and medicine.}{}
+
+\cventry{2022}{Volunteer}{ROOTS Community Shelter}{}{}{Describe some of the things I did at ROOTS.}{}
+
+\cventry{2021--2022}{Graduate Student Representative}{Graduate Council}{University of Washington Department of Genome Sciences}{Seattle, WA}{Attended monthly faculty meetings as the co-representative for graduate student interests.}{}
+
+\cventry{2021--2022}{Volunteer}{University of Washington Science Explorers}{Seattle, WA}{}{Organized, planned and led several basic science lessons for a local elementary school classroom.}{}
+
+\cventry{2018--2020}{Instructor}{Cupcakes and Coding}{Chan Zuckerberg Biohub}{San Francisco, CA}{Volunteered as an instructor at weekly beginner-friendly coding sessions}{}
+
+% CV Entry Template
+%\cventry{Date}{Title}{Organization}{School}{City}{Description}{}
+
+
+\end{document}
